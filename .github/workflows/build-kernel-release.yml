@@ -352,9 +352,10 @@ jobs:
           > **Build ID:** \`${{ github.run_id }}\`
 
           ### ✨ Enabled Features
-          - **BBRv3** TCP Congestion Control + FQ/CAKE Net Schedulers
+          - **BBRv3** TCP Congestion Control + FQ/CAKE/FQ_CODEL Net Schedulers
           - **Baseband Guard (BBG)** LSM Security
-          - **Wild Kernel Optimizations** (Memory, I/O, Scheduler, Wakeup/Freeze tunings)
+          - **SakFi Battery & Memory Optimizations:** Forced MGLRU (0x7), `RCU_LAZY` default-on, `WQ_POWER_EFFICIENT`, `PM_WAKELOCKS_GC`, `vmstat` 2x, `writeback` 3x, coalesced `timer_slack`, ZRAM `page-cluster=0` + writeback
+          - **Wild Kernel Optimizations** (SOT-safe memory, I/O, wakeup/freeze tunings; SOT-draining latency patches pruned)
           - **TTL / HL Target Support** (\`CONFIG_IP_NF_TARGET_TTL\`, \`CONFIG_IP6_NF_TARGET_HL\`)
           - **TMPFS** Extended Attributes & POSIX ACLs (\`CONFIG_TMPFS_XATTR\`, \`CONFIG_TMPFS_POSIX_ACL\`)
           - **Clean & Minimal:** No KernelSU, No SUSFS, No Droidspaces, No NTSync
